@@ -25,6 +25,11 @@ gemfile = <<-GEMFILE
 
 gem 'haml-rails', ">= 0.0.2"
 
+# Console display helpers
+gem 'awesome-print'
+gem 'looksee'
+gem 'wirble'
+
 group :test, :cucumber do
   gem 'capybara', '>= 0.3.8'
   gem 'cucumber-rails', '>= 0.3.2'
@@ -88,6 +93,9 @@ git :init
 git :add => '.'
 
 docs = <<-DOCS
+
+Note that the DEBUG gems have been commented out in the Gemfile
+Uncomment the gem that corresponds to your Ruby version
 
 Run the following commands to complete the setup of #{app_name.humanize}:
 

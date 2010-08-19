@@ -23,6 +23,11 @@ gemfile = <<-GEMFILE
 
 gem 'haml-rails', ">= 0.0.2"
 
+# Console display helpers
+gem 'awesome-print'
+gem 'looksee'
+gem 'wirble'
+
 group :test do
   gem 'factory_girl_rails', '>= 1.0.0'
   gem 'rspec-rails', '>= 2.0.0.beta.12'
@@ -81,6 +86,9 @@ git :init
 git :add => '.'
 
 docs = <<-DOCS
+
+Note that the DEBUG gems have been commented out in the Gemfile
+Uncomment the gem that corresponds to your Ruby version
 
 Run the following commands to complete the setup of #{app_name.humanize}:
 
