@@ -5,6 +5,19 @@ RVMRC
 
 create_file ".rvmrc", rvmrc
 
+gitignore = <<-GITIGNORE
+*~
+.DS_Store
+.bundle
+config/database.yml
+db/*.db
+db/*.sql
+log/*.log
+tmp/**/*
+GITIGNORE
+
+create_file ".gitignore", gitignore
+
 gem "factory_girl_rails", ">= 1.0.0", :group => :test
 gem "factory_girl_generator", ">= 0.0.1", :group => [:test, :development]
 gem "haml-rails", ">= 0.0.2"

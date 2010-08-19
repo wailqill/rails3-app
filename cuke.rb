@@ -5,6 +5,21 @@ RVMRC
 
 create_file ".rvmrc", rvmrc
 
+gitignore = <<-GITIGNORE
+*~
+.DS_Store
+.bundle
+capybara-*.html
+config/database.yml
+db/*.db
+db/*.sql
+log/*.log
+rerun.txt
+tmp/**/*
+GITIGNORE
+
+create_file ".gitignore", gitignore
+
 gem "capybara", ">= 0.3.8", :group => [:test, :cucumber]
 gem "cucumber-rails", ">= 0.3.2", :group => [:test, :cucumber]
 gem "database_cleaner", ">= 0.5.2", :group => [:test, :cucumber]
