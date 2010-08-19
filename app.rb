@@ -19,10 +19,27 @@ GITIGNORE
 run 'rm .gitignore'
 create_file ".gitignore", gitignore
 
-gem "factory_girl_rails", ">= 1.0.0", :group => :test
-gem "factory_girl_generator", ">= 0.0.1", :group => [:test, :development]
-gem "haml-rails", ">= 0.0.2"
-gem "rspec-rails", ">= 2.0.0.beta.12", :group => :test
+gemfile = <<-GEMFILE
+
+gem 'haml-rails', ">= 0.0.2"
+
+group :test do
+  gem 'factory_girl_rails', '>= 1.0.0'
+  gem 'rspec-rails', '>= 2.0.0.beta.12'
+end
+
+group :test, :development do
+  gem 'factory_girl_generator', '>= 0.0.1'
+end
+
+group :test, :development, :staging do
+  # For debugging, use one of the following
+  # gem 'ruby-debug'   # For Ruby 1.8
+  # gem 'ruby-debug19' # For Ruby 1.9
+end
+GEMFILE
+
+append_file 'Gemfile', gemfile
 
 generators = <<-GENERATORS
 
