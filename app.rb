@@ -24,7 +24,7 @@ gemfile = <<-GEMFILE
 gem 'haml-rails', ">= 0.0.2"
 
 # Console display helpers
-gem 'awesome-print'
+gem 'awesome_print'
 gem 'looksee'
 gem 'wirble'
 
