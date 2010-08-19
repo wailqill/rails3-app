@@ -16,6 +16,7 @@ log/*.log
 tmp/**/*
 GITIGNORE
 
+run 'rm .gitignore'
 create_file ".gitignore", gitignore
 
 gem "factory_girl_rails", ">= 1.0.0", :group => :test
@@ -60,7 +61,7 @@ create_file "log/.gitkeep"
 create_file "tmp/.gitkeep"
 
 git :init
-git :add => "."
+git :add => '.'
 
 docs = <<-DOCS
 

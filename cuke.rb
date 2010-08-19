@@ -18,6 +18,7 @@ rerun.txt
 tmp/**/*
 GITIGNORE
 
+run 'rm .gitignore'
 create_file ".gitignore", gitignore
 
 gem "capybara", ">= 0.3.8", :group => [:test, :cucumber]
@@ -67,7 +68,7 @@ create_file "log/.gitkeep"
 create_file "tmp/.gitkeep"
 
 git :init
-git :add => "."
+git :add => '.'
 
 docs = <<-DOCS
 
