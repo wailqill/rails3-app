@@ -46,6 +46,8 @@ get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javasc
 
 gsub_file 'config/application.rb', 'config.action_view.javascript_expansions[:defaults] = %w()', 'config.action_view.javascript_expansions[:defaults] = %w(jquery.js jquery-ui.js rails.js)'
 
+run "cp config/database.yml config/database.yml.example"
+
 layout = <<-LAYOUT
 !!!
 %html
