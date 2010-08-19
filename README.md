@@ -5,14 +5,14 @@ Easily generate a Rails 3 RC application with RSpec, Factory Girl, Haml, and
 jQuery in one line:
 
     % rails new my_app -J -T -m \
-    http://github.com/leshill/rails3-app/raw/master/app.rb
+    http://github.com/bendyworks/rails3-app/raw/master/app.rb
 
 ## Need Cucumber?
 
 Use this generator file instead:
 
     % rails new my_app -J -T -m \
-    http://github.com/leshill/rails3-app/raw/master/cuke.rb
+    http://github.com/bendyworks/rails3-app/raw/master/cuke.rb
 
 rvm
 ---
@@ -49,9 +49,5 @@ Note on Patches/Pull Requests
 
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don’t break it in a future version
-  unintentionally.
-* Commit, do not mess with rakefile, version, or history.  (if you want to have
-  your own version, that is fine but bump version in a commit by itself I can
-  ignore when I pull)
+* Commit
 * Send me a pull request. Bonus points for topic branches.
