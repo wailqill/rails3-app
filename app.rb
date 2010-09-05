@@ -1,5 +1,6 @@
 rvmrc = <<-RVMRC
-rvm ree@#{app_name}
+rvm_gemset_create_on_use_flag=1
+rvm gemset use #{app_name}
 RVMRC
 
 create_file ".rvmrc", rvmrc
@@ -88,8 +89,6 @@ docs = <<-DOCS
 
 Note that the DEBUG gems have been commented out in the Gemfile
 Uncomment the gem that corresponds to your Ruby version
-
-Your .rvmrc file assumes you want to use REE. If desired, change at will
 
 Run the following commands to complete the setup of #{app_name.humanize}:
 
