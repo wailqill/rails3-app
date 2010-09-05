@@ -21,7 +21,7 @@ create_file ".gitignore", gitignore
 
 gemfile = <<-GEMFILE
 
-gem 'haml-rails', "~> 0.0.2"
+gem 'haml-rails', ">= 0.0.2"
 
 # Console display helpers
 gem 'awesome_print'
@@ -29,12 +29,12 @@ gem 'looksee'
 gem 'wirble'
 
 group :test do
-  gem 'factory_girl_rails', '~> 1.2.0'
+  gem 'factory_girl_rails', '~> 1.0.0'
   gem 'rspec-rails', '>= 2.0.0.beta.20'
 end
 
 group :test, :development do
-  gem 'factory_girl_generator', '~> 0.0.1'
+  gem 'factory_girl_generator', '>= 0.0.1'
 end
 
 group :test, :development, :staging do
