@@ -21,7 +21,7 @@ create_file ".gitignore", gitignore
 
 gemfile = <<-GEMFILE
 
-gem 'haml-rails', ">= 0.0.2"
+gem 'haml-rails', "~> 0.0.2"
 
 # Console display helpers
 gem 'awesome_print'
@@ -29,12 +29,12 @@ gem 'looksee'
 gem 'wirble'
 
 group :test do
-  gem 'factory_girl_rails', '>= 1.0.0'
-  gem 'rspec-rails', '>= 2.0.0.beta.12'
+  gem 'factory_girl_rails', '~> 1.2.0'
+  gem 'rspec-rails', '>= 2.0.0.beta.20'
 end
 
 group :test, :development do
-  gem 'factory_girl_generator', '>= 0.0.1'
+  gem 'factory_girl_generator', '~> 0.0.1'
 end
 
 group :test, :development, :staging do
@@ -47,7 +47,6 @@ GEMFILE
 append_file 'Gemfile', gemfile
 
 generators = <<-GENERATORS
-
     config.generators do |g|
       g.test_framework :rspec, :fixture => true, :views => false
       g.integration_tool :rspec, :fixture => true, :views => true
@@ -93,7 +92,7 @@ Uncomment the gem that corresponds to your Ruby version
 Run the following commands to complete the setup of #{app_name.humanize}:
 
 cd #{app_name}
-gem install bundler --pre
+gem install bundler
 bundle install
 script/rails generate rspec:install
 
