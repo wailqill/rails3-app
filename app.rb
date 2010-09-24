@@ -11,7 +11,7 @@ gitignore = <<-GITIGNORE
 .bundle
 config/database.yml
 db/*.db
-db/*.sql
+db/*.sqlite3
 log/*.log
 tmp/**/*
 GITIGNORE

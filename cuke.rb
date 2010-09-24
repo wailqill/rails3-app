@@ -12,10 +12,11 @@ gitignore = <<-GITIGNORE
 capybara-*.html
 config/database.yml
 db/*.db
-db/*.sql
+db/*.sqlite3
 log/*.log
 rerun.txt
 tmp/**/*
+webrat.log
 GITIGNORE
 
 run 'rm .gitignore'
