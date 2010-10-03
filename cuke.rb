@@ -43,6 +43,7 @@ group :test, :cucumber do
 end
 
 group :test, :cucumber, :development do
+  gem 'autotest'
   gem 'rspec-rails', '>= 2.0.0.beta.22'
   gem 'factory_girl_generator', '>= 0.0.1'
 end
