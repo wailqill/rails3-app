@@ -93,7 +93,7 @@ create_file "app/views/layouts/application.html.haml", layout
 
 create_file "log/.gitkeep"
 create_file "tmp/.gitkeep"
-create_file "public/stylesheets/application.sass"
+create_file "public/stylesheets/sass/application.sass"
 
 git :init
 git :add => '.'
