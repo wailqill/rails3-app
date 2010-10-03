@@ -15,6 +15,7 @@ db/*.db
 db/*.sqlite3
 log/*.log
 rerun.txt
+tmp/*
 tmp/**/*
 webrat.log
 GITIGNORE
@@ -32,17 +33,17 @@ gem 'looksee'
 gem 'wirble'
 
 group :test, :cucumber do
-  gem 'rspec-rails', '>= 2.0.0.beta.20'
-  gem "webrat", ">= 0.7.2.beta.1"
+#  gem "webrat", ">= 0.7.2.beta.1"
   gem 'cucumber-rails', '>= 0.3.2'
   gem 'database_cleaner', '>= 0.5.2'
   gem 'factory_girl_rails', '>= 1.0.0'
   gem 'spork', '>= 0.9.0.rc2'
-#  gem 'capybara', '>= 0.3.8'
-#  gem 'launchy', '>= 0.3.5'
+  gem 'capybara', '~> 0.3.9'
+  gem 'launchy', '~> 0.3.7'
 end
 
 group :test, :cucumber, :development do
+  gem 'rspec-rails', '>= 2.0.0.beta.22'
   gem 'factory_girl_generator', '>= 0.0.1'
 end
 
@@ -58,8 +59,10 @@ append_file 'Gemfile', gemfile
 generators = <<-GENERATORS
 
     config.generators do |g|
-      g.test_framework :rspec, :fixture => true, :views => false
-      g.intergration_tool :rspec
+      g.orm               :active_record
+      g.template_engine   :haml
+      g.test_framework    :rspec, :fixture => true, :views => false
+      g.integration_tool  :rspec
     end
 GENERATORS
 
@@ -71,14 +74,14 @@ get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javasc
 
 gsub_file 'config/application.rb', 'config.action_view.javascript_expansions[:defaults] = %w()', 'config.action_view.javascript_expansions[:defaults] = %w(jquery.js jquery-ui.js rails.js)'
 
-run "cp config/database.yml config/database.yml.example"
+run "cp config/database.yml config/database.example.yml"
 
 layout = <<-LAYOUT
 !!!
 %html
   %head
     %title #{app_name.humanize}
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag :application
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
@@ -90,6 +93,7 @@ create_file "app/views/layouts/application.html.haml", layout
 
 create_file "log/.gitkeep"
 create_file "tmp/.gitkeep"
+create_file "public/stylesheets/application.sass"
 
 git :init
 git :add => '.'
@@ -102,7 +106,7 @@ Uncomment the gem that corresponds to your Ruby version
 Run the following commands to complete the setup of #{app_name.humanize}:
 
 cd #{app_name}
-gem install bundler --pre
+gem install bundler
 bundle install
 script/rails generate rspec:install
 script/rails generate cucumber:install --rspec
