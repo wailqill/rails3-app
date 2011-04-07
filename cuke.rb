@@ -38,13 +38,13 @@ group :test, :cucumber do
   gem 'database_cleaner', '>= 0.5.2'
   gem 'factory_girl_rails', '>= 1.0.0'
   gem 'spork', '>= 0.9.0.rc2'
-  gem 'capybara', '~> 0.3.9'
-  gem 'launchy', '~> 0.3.7'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :test, :cucumber, :development do
   gem 'autotest'
-  gem 'rspec-rails', '>= 2.0.0.beta.22'
+  gem 'rspec-rails'
   gem 'factory_girl_generator', '>= 0.0.1'
 end
 
@@ -69,8 +69,8 @@ GENERATORS
 
 application generators
 
-get "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js",  "public/javascripts/jquery.js"
-get "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js", "public/javascripts/jquery-ui.js"
+get "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js",  "public/javascripts/jquery.js"
+get "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js", "public/javascripts/jquery-ui.js"
 get "https://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
 
 gsub_file 'config/application.rb', 'config.action_view.javascript_expansions[:defaults] = %w()', 'config.action_view.javascript_expansions[:defaults] = %w(jquery.js jquery-ui.js rails.js)'
