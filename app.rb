@@ -29,11 +29,12 @@ gem 'looksee'
 gem 'wirble'
 
 group :test do
-  gem 'factory_girl_rails', '~> 1.0.0'
-  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'factory_girl_rails'
 end
 
 group :test, :development do
+  gem 'autotest'
+  gem 'rspec-rails'
   gem 'factory_girl_generator', '>= 0.0.1'
 end
 
@@ -48,8 +49,10 @@ append_file 'Gemfile', gemfile
 
 generators = <<-GENERATORS
     config.generators do |g|
-      g.test_framework :rspec, :fixture => true, :views => false
-      g.integration_tool :rspec, :fixture => true, :views => true
+      g.orm               :active_record
+      g.template_engine   :haml
+      g.test_framework    :rspec, :fixture => true, :views => false
+      g.integration_tool  :rspec, :fixture => true, :views => true
     end
 GENERATORS
 
